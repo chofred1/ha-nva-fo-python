@@ -17,7 +17,7 @@ from azure.mgmt.network.models import Route, RouteTable
 from azure.mgmt.resource import ResourceManagementClient
 
 app = func.FunctionApp()
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 
 
 # Environment Variables
@@ -218,7 +218,7 @@ def get_relevant_routes() -> list[RouteDetails]:
                             )
                         except ResourceNotFoundError:
                             logging.warning(
-                                f"route `{route_name}` was not found in RT: {route_table.name}"
+                                f"route name `{route_name}` was not found in RT: {route_table.name}"
                             )
                             continue
 
