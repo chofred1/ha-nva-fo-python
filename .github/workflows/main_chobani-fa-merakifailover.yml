@@ -66,9 +66,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_8131D78900094D80A94396C833A6E85F }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_946A49F3A80A41A7AFA116A0A618AF3D }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_2F7B6A1459CE40B796352EB0C5882916 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7F9B36BD705C45C084DE02EEE9FF2F74 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D6200E60595E4D90B7E0BBDC8F79D029 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_87ECCCDFECE747F5B65E128510E2D9FC }}
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
@@ -77,6 +77,4 @@ jobs:
           app-name: 'Chobani-FA-MerakiFailover'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          scm-do-build-during-deployment: true
-          enable-oryx-build: true
           
